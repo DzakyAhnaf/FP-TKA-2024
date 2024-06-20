@@ -61,3 +61,8 @@ konfigurasi cloud terbaik seperti apa yang bisa dibuat?
 ## II. Desain Rancangan Arsitektur Komputasi Awan dan Tabel Harga Spesifikasi VM
 
 ![Deskripsi Gambar](./images/rancangan-arsitektur.png)
+
+## III. Langkah-langkah Implementasi dan Konfigurasi
+## IV. Hasil Pengujian Endpoint Setiap API dan UI Aplikasi
+## V. Hasil Pengujian dan Analisis Loadtesting Locust
+## VI. Kesimpulan dan Saran
