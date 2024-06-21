@@ -80,21 +80,21 @@ dengan rincian harga sebagai berikut.
   <tr>
     <td>1</td>
     <td>tkavm1</td>
-    <td>50GB storage, 2GB RAM</td>
+    <td>35GB storage, 2GB RAM</td>
     <td>App Worker 1</td>
     <td>$14</td>
   </tr>
   <tr>
     <td>2</td>
     <td>tkavm2</td>
-    <td>50GB storage, 2GB RAM</td>
+    <td>35GB storage, 2GB RAM</td>
     <td>App WOrker 2</td>
     <td>$14</td>
   </tr>
   <tr>
     <td>3</td>
     <td>tkavm3</td>
-    <td>50GB storage, 2GB RAM</td>
+    <td>35GB storage, 2GB RAM</td>
     <td>Load Balancer</td>
     <td>$14</td>
   </tr>
@@ -113,97 +113,19 @@ dengan rincian harga sebagai berikut.
 
 ## III. Langkah-langkah Implementasi dan Konfigurasi
 
-### A. Setup VM 1
+### A. Setup VM 1 dan 2
 
-1. pertama `ssh` kedalam VM1 dan masukkan password VM
-   `ssh root@152.42.233.125`
-   <img width="686" alt="image" src="https://github.com/DzakyAhnaf/FP-TKA-2024/assets/147925317/540fdd3f-b2f0-41c5-ae3b-ef3dc6c9e8a8">
+Setup VM1 dan VM2:
 
-2. Jalankan beberapa command berikut dan git clone [repo](https://github.com/fuaddary/fp-tka) kedalam VM1
-
-   ```
-   sudo apt update
-   sudo apt upgrade
-
-   # git clone repo
-   git clone https://github.com/fuaddary/fp-tka
-   ```
-
-3. Lakukan beberapa command berikut untuk install nginx
-
-   ```bash
-   sudo apt update
-   sudo apt upgrade -y
-   sudo apt install nginx -y
-   ```
-
-4. Install dependency python
-   ```bash
-   sudo apt update
-   sudo apt install python3 -y
-   sudo apt install python3-pip -y
-   sudo apt install python3.12-venv
-   ```
-5. Pindahkan index.html kedalam /var/www/html  
-   `mv index.html /var/www/html/index.html`
-
-6. Ubah cara fetch pada index.html agar mengarah ke ip worker
-
-7. Konfigurasikan /etc/nginx/sites-enabled/default
-
-8. Konfigurasikan ip database pada file sentiment-analysis.py agar tersambung
-
-9. kemudian lakukan restart pada nginx
-
-10. kemudian Jalankan sentiment-analysis.py
-
-11. kemudian untuk memastikan berjalan dengan lancar lakukan query
-
-### A. Setup VM 2
-
-1. pertama `ssh` kedalam VM1 dan masukkan password VM
-   `ssh root@`
-   <img width="686" alt="image" src="https://github.com/DzakyAhnaf/FP-TKA-2024/assets/147925317/540fdd3f-b2f0-41c5-ae3b-ef3dc6c9e8a8">
-
-2. Jalankan beberapa command berikut dan git clone [repo](https://github.com/fuaddary/fp-tka) kedalam VM1
-
-   ```
-   sudo apt update
-   sudo apt upgrade
-
-   # git clone repo
-   git clone https://github.com/fuaddary/fp-tka
-   ```
-
-3. Lakukan beberapa command berikut untuk install nginx
-
-   ```bash
-   sudo apt update
-   sudo apt upgrade -y
-   sudo apt install nginx -y
-   ```
-
-4. Install dependency python
-   ```bash
-   sudo apt update
-   sudo apt install python3 -y
-   sudo apt install python3-pip -y
-   sudo apt install python3.12-venv
-   ```
-5. Pindahkan index.html kedalam /var/www/html  
-   `mv index.html /var/www/html/index.html`
-
-6. Ubah cara fetch pada index.html agar mengarah ke ip worker
-
-7. Konfigurasikan /etc/nginx/sites-enabled/default
-
-8. Konfigurasikan ip database pada file sentiment-analysis.py agar tersambung
-
-9. kemudian lakukan restart pada nginx
-
-10. kemudian Jalankan sentiment-analysis.py
-
-11. kemudian untuk memastikan berjalan dengan lancar lakukan query
+- ssh root@ip-vmx
+- git clone https://github.com/fuaddary/fp-tka.git
+- cd fp-tka/Resources/BE
+- sudo apt install python3-venv
+- python -m venv venv
+- source venv/bin/activate
+- edit mongodb URL
+- pip install flask flask-cors textblob pymongo
+- python sentiment-analysis.py
 
 ### A. Setup VM 3 (Load Balancer)
 
