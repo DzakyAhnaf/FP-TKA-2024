@@ -107,7 +107,7 @@ dengan rincian harga sebagai berikut.
   </tr>
   <tr>
     <td colspan="4" style="text-align:right;"><strong>Total</strong></td>
-    <td><strong>$62</strong></td>
+    <td><strong>$57</strong></td>
   </tr>
 </table>
 
