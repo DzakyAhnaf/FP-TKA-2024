@@ -60,9 +60,77 @@ konfigurasi cloud terbaik seperti apa yang bisa dibuat?
 
 ## II. Desain Rancangan Arsitektur Komputasi Awan dan Tabel Harga Spesifikasi VM
 
+Pada project kali ini, kami menggunakan satu provider yaitu DigitalOcean, pada DigitalOcean kami menggunakan 3 droplet.
+
+**Rancangan:**
 ![Deskripsi Gambar](./images/rancangan-arsitektur.png)
 
+dengan rincian harga sebagai berikut.
+
+**Rincian Harga:**
+
+<table>
+  <tr>
+    <th>No.</th>
+    <th>Nama</th>
+    <th>Spesifikasi</th>
+    <th>Fungsi</th>
+    <th>Harga per Bulan</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>tkavm1</td>
+    <td>10GB storage, 1GB RAM</td>
+    <td>App Worker 1</td>
+    <td>$16</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>tkavm2</td>
+    <td>100GB storage, 8GB RAM</td>
+    <td>App WOrker 2</td>
+    <td>$16</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>tkavm3</td>
+    <td>.com, 1-year renewal</td>
+    <td>Load Balancer</td>
+    <td>$15</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>tkadatabase</td>
+    <td>Unlimited data, 5 devices</td>
+    <td>MongoDB</td>
+    <td>$15</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align:right;"><strong>Total</strong></td>
+    <td><strong>$62</strong></td>
+  </tr>
+</table>
+
+
+
 ## III. Langkah-langkah Implementasi dan Konfigurasi
+### A. Setup VM 1
+1. pertama `ssh` kedalam VM1 dan masukkan password VM
+   
+   <img width="686" alt="image" src="https://github.com/DzakyAhnaf/FP-TKA-2024/assets/147925317/540fdd3f-b2f0-41c5-ae3b-ef3dc6c9e8a8">
+
+2. Jalankan beberapa command berikut dan git clone [repo](https://github.com/fuaddary/fp-tka) kedalam VM1
+   ```
+   sudo apt update
+   sudo apt upgrade
+
+   # git clone repo
+   git clone https://github.com/fuaddary/fp-tka
+   ```
+
+3. 
+
+
 ## IV. Hasil Pengujian Endpoint Setiap API dan UI Aplikasi
 ## V. Hasil Pengujian dan Analisis Loadtesting Locust
 ## VI. Kesimpulan dan Saran
