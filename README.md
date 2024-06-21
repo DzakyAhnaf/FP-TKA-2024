@@ -53,8 +53,6 @@ Pada suatu saat anda mendapatkan project untuk mendeploy sebuah aplikasi Sentime
 
 Kemudian juga disediakan sebuah Frontend sederhana menggunakan [index.html](/Resources/FE/index.html) dan [styles.css](/Resources/FE/styles.css) dengan tampilan antarmuka sebagai berikut
 
-![alt text](images/image-6.png)
-![alt text](images/image-7.png)
 ![alt text](images/image-8.png)
 
 Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutuhan aplikasi tersebut. Apabila dana maksimal yang diberikan adalah **1 juta rupiah per bulan (65 US$)**
@@ -82,28 +80,28 @@ dengan rincian harga sebagai berikut.
   <tr>
     <td>1</td>
     <td>tkavm1</td>
-    <td>10GB storage, 1GB RAM</td>
+    <td>50GB storage, 2GB RAM</td>
     <td>App Worker 1</td>
-    <td>$16</td>
+    <td>$14</td>
   </tr>
   <tr>
     <td>2</td>
     <td>tkavm2</td>
-    <td>100GB storage, 8GB RAM</td>
+    <td>50GB storage, 2GB RAM</td>
     <td>App WOrker 2</td>
-    <td>$16</td>
+    <td>$14</td>
   </tr>
   <tr>
     <td>3</td>
     <td>tkavm3</td>
-    <td>.com, 1-year renewal</td>
+    <td>50GB storage, 2GB RAM</td>
     <td>Load Balancer</td>
-    <td>$15</td>
+    <td>$14</td>
   </tr>
   <tr>
     <td>4</td>
     <td>tkadb1</td>
-    <td>Unlimited data, 5 devices</td>
+    <td>1 GB RAM. 15 GB Disk</td>
     <td>MongoDB</td>
     <td>$15</td>
   </tr>
@@ -159,7 +157,7 @@ dengan rincian harga sebagai berikut.
 
 10. kemudian Jalankan sentiment-analysis.py
 
-11. kemudian untuk memastikan berjalan dengan lancar lakukan query sehingga menunjukkan seperti gambar di bawah
+11. kemudian untuk memastikan berjalan dengan lancar lakukan query
 
 ### A. Setup VM 2
 
@@ -205,13 +203,36 @@ dengan rincian harga sebagai berikut.
 
 10. kemudian Jalankan sentiment-analysis.py
 
-11. kemudian untuk memastikan berjalan dengan lancar lakukan query sehingga menunjukkan seperti gambar di bawah
+11. kemudian untuk memastikan berjalan dengan lancar lakukan query
 
 ### A. Setup VM 3 (Load Balancer)
 
+- sudo apt update
+- sudo apt install nginx
+- git clone https://github.com/fuaddary/fp-tka.git
+- sudo vim /etc/nginx/sites-available/app (MASUKKAN CONFIG NGINX)
+- sudo systemctl restart nginx
+
+### Setup FE:
+
+- SSH ke VM1 dan VM2
+- cd fp-tka/Resources/FE
+- cp index.html /var/www/html && cp styles.css var/www/html
+- edit index.html untuk menggunakan URL BE
+- sudo vim /etc/nginx/sites-available/app (MASUKKAN CONFIG NGINX)
+- sudo unlink /etc/nginx/sites-available/default
+- sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled
+- sudo systemctl restart nginx
+
 ## IV. Hasil Pengujian Endpoint Setiap API dan UI Aplikasi
 
-###
+### Uji Endpoint /history
+
+![alt text](images/image-6.png)
+
+### Uji Endpoint /analyze
+
+![alt text](images/image-7.png)
 
 ## V. Hasil Pengujian dan Analisis Loadtesting Locust
 
@@ -219,10 +240,13 @@ dengan rincian harga sebagai berikut.
 
 ### Uji Peak Concurrency Dengan Spawn Rate 50/s
 
-![alt text](image.png)
+![alt text](images/image.png)
+
 ![alt text](images/image-1.png)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 100/s
+
+![alt text](images/image-15.png)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 200/s
 
@@ -233,5 +257,14 @@ dengan rincian harga sebagai berikut.
 
 ![alt text](images/image-4.png)
 ![alt text](images/image-5.png)
+
+![alt text](images/image-10.png)
+![alt text](images/image-9.png)
+
+![alt text](images/image-12.png)
+![alt text](images/image-11.png)
+
+![alt text](images/image-13.png)
+![alt text](images/image-14.png)
 
 ## VI. Kesimpulan dan Saran
