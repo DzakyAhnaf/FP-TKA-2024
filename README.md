@@ -111,15 +111,16 @@ dengan rincian harga sebagai berikut.
   </tr>
 </table>
 
-
-
 ## III. Langkah-langkah Implementasi dan Konfigurasi
+
 ### A. Setup VM 1
+
 1. pertama `ssh` kedalam VM1 dan masukkan password VM
-   
+   `ssh root@152.42.233.125`
    <img width="686" alt="image" src="https://github.com/DzakyAhnaf/FP-TKA-2024/assets/147925317/540fdd3f-b2f0-41c5-ae3b-ef3dc6c9e8a8">
 
 2. Jalankan beberapa command berikut dan git clone [repo](https://github.com/fuaddary/fp-tka) kedalam VM1
+
    ```
    sudo apt update
    sudo apt upgrade
@@ -128,9 +129,28 @@ dengan rincian harga sebagai berikut.
    git clone https://github.com/fuaddary/fp-tka
    ```
 
-3. 
+3. Lakukan beberapa command berikut untuk install nginx
 
+   ```bash
+   sudo apt update
+   sudo apt upgrade -y
+   sudo apt install nginx -y
+   ```
+
+4. Install dependency python
+   ```bash
+   sudo apt update
+   sudo apt install python3 -y
+   sudo apt install python3-pip -y
+   sudo apt install python3.12-venv
+   ```
+5. Pindahkan index.html kedalam /var/www/html  
+   `mv index.html /var/www/html/index.html`
+
+6.
 
 ## IV. Hasil Pengujian Endpoint Setiap API dan UI Aplikasi
+
 ## V. Hasil Pengujian dan Analisis Loadtesting Locust
+
 ## VI. Kesimpulan dan Saran
