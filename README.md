@@ -80,34 +80,27 @@ dengan rincian harga sebagai berikut.
   <tr>
     <td>1</td>
     <td>tkavm1</td>
-    <td>35GB storage, 2GB RAM</td>
-    <td>App Worker 1</td>
-    <td>$14</td>
+    <td>35GB storage, 2GB RAM, 2 Intel vCPUs</td>
+    <td>App Worker 1 and DB1</td>
+    <td>$21</td>
   </tr>
   <tr>
     <td>2</td>
     <td>tkavm2</td>
-    <td>35GB storage, 2GB RAM</td>
-    <td>App WOrker 2</td>
-    <td>$14</td>
+    <td>35GB storage, 2GB RAM, 2 Intel vCPUs</td>
+    <td>App Worker 2 and DB2</td>
+    <td>$21</td>
   </tr>
   <tr>
     <td>3</td>
     <td>tkavm3</td>
-    <td>35GB storage, 2GB RAM</td>
+    <td>35GB storage, 2GB RAM, 2 Intel vCPUs</td>
     <td>Load Balancer</td>
-    <td>$14</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>tkadb1</td>
-    <td>1 GB RAM. 15 GB Disk</td>
-    <td>MongoDB</td>
-    <td>$15</td>
+    <td>$21</td>
   </tr>
   <tr>
     <td colspan="4" style="text-align:right;"><strong>Total</strong></td>
-    <td><strong>$57</strong></td>
+    <td><strong>$63</strong></td>
   </tr>
 </table>
 
@@ -160,33 +153,34 @@ Setup VM1 dan VM2:
 
 ### Uji RPS selama 60s
 
+NOTES: TES DILAKUKAN SELAMA 60S
+
 ### Uji Peak Concurrency Dengan Spawn Rate 50/s
 
-![alt text](images/image.png)
-
-![alt text](images/image-1.png)
+RPS = 568.6
+SCORE = 568.6/200\*30 = 85.29
+![alt text](images/3000-50-setup.png)
+![alt text](images/3000-50.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 100/s
 
-![alt text](images/image-15.png)
+RPS = 486.7
+SCORE = 486.7/200\*30 = 73
+![alt text](images/1500-100-setup.jpeg)
+![alt text](images/1500-100.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 200/s
 
-![alt text](images/image-2.png)
-![alt text](images/image-3.png)
+RPS = 472.3
+SCORE = 472.3/200\*30 = 70.84
+![alt text](images/1500-200-setup.jpeg)
+![alt text](images/1500-200.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 500/s
 
-![alt text](images/image-4.png)
-![alt text](images/image-5.png)
-
-![alt text](images/image-10.png)
-![alt text](images/image-9.png)
-
-![alt text](images/image-12.png)
-![alt text](images/image-11.png)
-
-![alt text](images/image-13.png)
-![alt text](images/image-14.png)
+RPS = 347
+SCORE = 347/200\*30 = 52.05
+![alt text](images/1500-500-setup.jpeg)
+![alt text](images/1500-500.jpeg)
 
 ## VI. Kesimpulan dan Saran
