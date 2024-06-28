@@ -171,10 +171,19 @@ SCORE = 486.7/200\*30 = 73
 
 ### Uji Peak Concurrency Dengan Spawn Rate 200/s
 
-RPS = 472.3
-SCORE = 472.3/200\*30 = 70.84
-![alt text](images/1500-200-setup.jpeg)
-![alt text](images/1500-200.jpeg)
+RPS = 555.4
+SCORE = 555.4/200\*30 = 83.31
+
+<!-- ![alt text](images/5000-200-setup.jpeg) -->
+
+![alt text](images/5000-200.jpeg)
+
+### Uji Pak Concurrency Dengan Spawn Rate 300/s
+
+RPS = 573.7
+SCORE = 573.7/200\*30 = 86
+![alt text](images/10000-300-setup.jpeg)
+![alt text](images/10000-300.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 500/s
 
