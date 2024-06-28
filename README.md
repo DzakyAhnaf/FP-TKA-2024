@@ -164,10 +164,10 @@ SCORE = 568.6/200\*30 = 85.29
 
 ### Uji Peak Concurrency Dengan Spawn Rate 100/s
 
-RPS = 486.7
-SCORE = 486.7/200\*30 = 73
-![alt text](images/1500-100-setup.jpeg)
-![alt text](images/1500-100.jpeg)
+RPS = 614.2
+SCORE = 614.2/200\*30 = 92.13
+![alt text](images/3500-100-setup.jpeg)
+![alt text](images/3500-100.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 200/s
 
