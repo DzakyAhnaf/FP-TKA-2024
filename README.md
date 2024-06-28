@@ -191,7 +191,9 @@ SCORE = 573.7/200\*30 = 86
 
 RPS = 599.4
 SCORE = 599.4/200\*30 = 89.91
-![alt text](2000-500-setup.png)
-![alt text](2000-500.png)
+![alt text](images/2000-500-setup.png)
+![alt text](images/2000-500.png)
 
 ## VI. Kesimpulan dan Saran
+
+### Live demo
