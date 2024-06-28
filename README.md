@@ -143,6 +143,8 @@ Setup VM1 dan VM2:
 
 ### Uji Endpoint /history
 
+![alt text](images/image-8.png)
+
 ![alt text](images/image-6.png)
 
 ### Uji Endpoint /analyze
@@ -182,14 +184,14 @@ SCORE = 555.4/200\*30 = 83.31
 
 RPS = 573.7
 SCORE = 573.7/200\*30 = 86
-![alt text](images/10000-300-setup.jpeg)
 ![alt text](images/10000-300.jpeg)
+![alt text](images/10000-300-setup.jpeg)
 
 ### Uji Peak Concurrency Dengan Spawn Rate 500/s
 
-RPS = 347
-SCORE = 347/200\*30 = 52.05
-![alt text](images/1500-500-setup.jpeg)
-![alt text](images/1500-500.jpeg)
+RPS = 599.4
+SCORE = 599.4/200\*30 = 89.91
+![alt text](2000-500-setup.png)
+![alt text](2000-500.png)
 
 ## VI. Kesimpulan dan Saran
