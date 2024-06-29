@@ -222,7 +222,7 @@ Keterangan:
 ---
 
 Penjelasan:
-Kita menggunakan nginx sebagai web-server karena cepat dan mudah untuk disetup, nginx disini kita gunakan sebagai load balancer yang akan mendistribute requests ke VM worker. `ulimit -n 100000` dilakukan untuk menaikkan limit file descriptor yand dapat dibuka oleh linux.
+Kita menggunakan nginx sebagai web-server karena cepat dan mudah untuk disetup, nginx disini kita gunakan sebagai load balancer yang akan mendistribute requests ke VM worker. `ulimit -n 100000` dilakukan untuk menaikkan limit file descriptor yang dapat dibuka oleh linux.
 
 ### C. Setup Locust
 
