@@ -2,14 +2,14 @@
 
 upstream backend_servers {
 	# VM1
-	server 152.42.233.125:5000;
+	server IP_VM1:5000;
 	# VM2
-	server 128.199.154.15:5000;
+	server IP_VM2:5000;
 }
 
 server {
     listen 80;
-    server_name 152.42.220.24;  # Ganti dengan IP atau domain server Anda
+    server_name IP_VM3;  # Ganti dengan IP atau domain server Anda
 
     location / {
         # Aktifkan penggunaan cache
