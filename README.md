@@ -329,10 +329,12 @@ Dapat dilihat bahwa program memakan banyak CPU, database mongodb kita juga memak
 TKAVM1
 ![alt text](images/ru-vm1.png)
 ![alt text](images/ru-vm1-db.png)
+![alt text](images/mongovm1.png)
 
 TKAVM2
 ![alt text](images/ru-vm2.png)
 ![alt text](images/ru-vm2-db.png)
+![alt text](images/mongovm2.png)
 
 TKAVM3
 ![alt text](images/ru-lb.png)
