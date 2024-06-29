@@ -120,7 +120,7 @@ Tutorial: https://www.freecodecamp.org/news/command-line-for-beginners/
 - sudo mkswap /swapfile
 - sudo swapon /swapfile
 - sudo swapon --show
-  ![alt text](image-2.png)
+  ![alt text](images/swap.png)
 
 ---
 
@@ -135,7 +135,7 @@ Karena kita menggunakan database didalam VM worker maka dianjurkan untuk mengalo
 - sudo apt install python3-venv
 - python -m venv venv
 - source venv/bin/activate
-  ![alt text](image.png) Pastikan sudah masuk kedalam `venv`
+  ![alt text](images/venv.png) Pastikan sudah masuk kedalam `venv`
 - pip install flask flask-cors textblob pymongo gunicorn gevent
 - mv sentiment-analysis.py sentiment_analysis.py
 
@@ -176,7 +176,7 @@ Karena program kita adalah program python disini kita perlu untuk melakukan setu
 gunicorn -b 0.0.0.0:5000 -w 15 -k gevent --timeout --graceful-timeout 60 sentiment_analysis:app
 ```
 
-![alt text](image-1.png)
+![alt text](images/gunicorn.png)
 Keterangan:
 
 1. `-b 0.0.0.0:5000`: Menentukan Gunicorn untuk bind ke semua antarmuka jaringan pada port 5000.
@@ -190,25 +190,34 @@ Keterangan:
 
 #### Setup FE:
 
-- SSH ke VM1 dan VM2
+- ssh root@ip-vmx
 - cd fp-tka/Resources/FE
 - cp index.html /var/www/html && cp styles.css var/www/html
-- sudo vim /etc/nginx/sites-available/app (MASUKKAN CONFIG NGINX)
+- sudo nano /etc/nginx/sites-available/app (MASUKKAN CONFIG NGINX disini
+  https://github.com/DzakyAhnaf/FP-TKA-2024/tree/main/nginx/FE/app)
 - sudo unlink /etc/nginx/sites-available/default
 - sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled
 - sudo systemctl restart nginx
-- akses pada browser dengan IP VM
+  akses pada browser dengan IP VM
 
 ### B. Setup VM 3 (Load Balancer)
 
 - sudo apt update
 - sudo apt install nginx
 - git clone https://github.com/fuaddary/fp-tka.git
-- sudo vim /etc/nginx/sites-available/app (MASUKKAN CONFIG NGINX DIDALAM SINI)
+- sudo nano /etc/nginx/sites-available/app
+
+  (MASUKKAN CONFIG https://github.com/DzakyAhnaf/FP-TKA-2024/tree/main/nginx/Load-Balancer/app)
+
 - sudo unlink /etc/nginx/sites-enabled/default
 - sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled
-- sudo systemctl restart nginx
+- sudo rm nginx.conf
+- sudo nano nginx.conf
+
+  (MASUKKAN CONFIG https://github.com/DzakyAhnaf/FP-TKA-2024/tree/main/nginx/Load-Balancer/nginx.conf)
+
 - ulimit -n 100000
+- sudo systemctl restart nginx
 
 ---
 
@@ -229,12 +238,12 @@ Setup locust dilakukan secara lokal (diluar VM). Pastikan Python sudah terinstal
 - cd /fp-tka/Resources/Test
 - python -m venv venv
 - source venv/bin/activate
-  ![alt text](image-4.png)
+  ![alt text](images/venv-locust.png)
 - pip install locust
 - locust
 
   Kemudian akses locust pada localhost:8089
-  ![alt text](image-5.png)
+  ![alt text](images/locust.png)
 
 ## IV. Hasil Pengujian Endpoint Setiap API dan UI Aplikasi
 
@@ -326,7 +335,7 @@ TKAVM2
 ![alt text](images/ru-vm2-db.png)
 
 TKAVM3
-![alt text](image-3.png)
+![alt text](ru-lb.png)
 Ketika program ditest menggunakan locust, load balancer bekerja dengan baik, bisa dilihat dari penggunaan CPU dan adanya banyak proses nginx seperti `nginx: worker process`, disini kita juga melakukan setup swap file sebanyak 2gb
 
 ## VI. Kesimpulan dan Saran
@@ -369,7 +378,7 @@ Berdasarkan uji coba yang telah dilakukan, didapatkan beberapa hasil yaitu:
 2. **Optimasi Aplikasi:**
 
    - Lakukan optimasi kode pada backend dan database untuk mengurangi penggunaan CPU dan memori.
-   - Menggunakan worker class `gevent` saat menggunakan gunicorn
+   - Menggunakan worker class `gevent` saat menggunakan gunicorn dan sesuaikan worker dengan jumlah CPU
 
 3. **Gunakan Internet Cepat**
 

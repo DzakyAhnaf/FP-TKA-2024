@@ -1,0 +1,38 @@
+# /etc/nginx/sites-available/app
+
+upstream backend_servers {
+	# VM1
+	server 152.42.233.125:5000;
+	# VM2
+	server 128.199.154.15:5000;
+}
+
+server {
+    listen 80;
+    server_name 152.42.220.24;  # Ganti dengan IP atau domain server Anda
+
+    location / {
+        # Aktifkan penggunaan cache
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 10m;
+        proxy_cache_valid 404 1m;
+
+        # Konfigurasi caching tambahan
+	proxy_http_version 1.1;
+        proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
+        proxy_cache_lock on;
+        proxy_cache_lock_timeout 5s;
+
+        # Pengaturan proxy_pass dan header lainnya
+        proxy_pass http://backend_servers;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header Connection "";
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+	proxy_ignore_headers Cache-Control expires;
+
+        # Header tambahan untuk mengidentifikasi status cache
+        add_header X-Cached $upstream_cache_status;
+    }
+}
