@@ -235,7 +235,7 @@ Setup locust dilakukan secara lokal (diluar VM). Pastikan Python sudah terinstal
 ---
 
 - git clone https://github.com/fuaddary/fp-tka.git
-- cd /fp-tka/Resources/Test
+- cd fp-tka/Resources/Test
 - python -m venv venv
 - source venv/bin/activate
   ![alt text](images/venv-locust.png)
