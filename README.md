@@ -335,7 +335,7 @@ TKAVM2
 ![alt text](images/ru-vm2-db.png)
 
 TKAVM3
-![alt text](ru-lb.png)
+![alt text](images/ru-lb.png)
 Ketika program ditest menggunakan locust, load balancer bekerja dengan baik, bisa dilihat dari penggunaan CPU dan adanya banyak proses nginx seperti `nginx: worker process`, disini kita juga melakukan setup swap file sebanyak 2gb
 
 ## VI. Kesimpulan dan Saran
