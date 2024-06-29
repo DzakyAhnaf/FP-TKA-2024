@@ -382,13 +382,17 @@ Berdasarkan uji coba yang telah dilakukan, didapatkan beberapa hasil yaitu:
    - Lakukan optimasi kode pada backend dan database untuk mengurangi penggunaan CPU dan memori.
    - Menggunakan worker class `gevent` saat menggunakan gunicorn dan sesuaikan worker dengan jumlah CPU
 
-3. **Gunakan Internet Cepat**
+3. **Gunakan Internet Cepat:**
 
    - Kecepatan Internet SANGAT berpengaruh dalam RPS, ketika kami melakukan uji coba dengan Internet lambat, RPS sangat jauh dibawah
 
-4. **Penginkatan Infrastruktur**
+4. **Penginkatan Infrastruktur:**
+
    - Pertimbangkan untuk menambah jumlah worker atau meningkatkan spesifikasi VM jika diharapkan peningkatan beban yang lebih tinggi di masa mendatang.
    - Monitoring dan penyesuaian konfigurasi load balancer secara berkala untuk memastikan performa optimal.
+
+5. **Keamanan:**
+   - Implementasi langkah-langkah keamanan tambahan, seperti firewall dan enkripsi data, untuk melindungi aplikasi dan data pengguna.
 
 ### Live demo
 
